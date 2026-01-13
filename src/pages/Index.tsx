@@ -1,13 +1,25 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Layout from "@/components/layout/Layout";
+import Hero from "@/components/sections/Hero";
+import ProblemSolution from "@/components/sections/ProblemSolution";
+import ProgramCards from "@/components/sections/ProgramCards";
+import HowItWorks from "@/components/sections/HowItWorks";
+import PricingCards from "@/components/sections/PricingCards";
+import Testimonials from "@/components/sections/Testimonials";
+import MapEmbed from "@/components/sections/MapEmbed";
+import CTASection from "@/components/sections/CTASection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Layout>
+      <Hero />
+      <ProblemSolution />
+      <ProgramCards />
+      <HowItWorks variant="general" />
+      <PricingCards />
+      <Testimonials />
+      <MapEmbed />
+      <CTASection />
+    </Layout>
   );
 };
 
