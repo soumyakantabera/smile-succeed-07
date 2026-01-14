@@ -11,7 +11,7 @@ const Header = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
+    <header className="sticky top-0 z-50 glass-header">
       <a href="#main-content" className="skip-to-content">
         Skip to content
       </a>
@@ -21,33 +21,53 @@ const Header = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center gap-2 hover:opacity-90 transition-opacity"
+            className="flex items-center gap-3 hover:opacity-90 transition-opacity group"
           >
             <svg 
-              className="w-10 h-10 md:w-12 md:h-12" 
+              className="w-10 h-10 md:w-11 md:h-11 transition-transform group-hover:scale-105" 
               viewBox="0 0 48 48" 
               fill="none" 
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
             >
-              {/* Book/Learning shape */}
-              <rect x="4" y="8" width="40" height="32" rx="4" className="fill-primary" />
-              <path d="M24 12V36" className="stroke-primary-foreground" strokeWidth="2" strokeLinecap="round" />
-              <path d="M8 12C8 12 16 14 24 14C32 14 40 12 40 12" className="stroke-primary-foreground" strokeWidth="2" strokeLinecap="round" />
-              {/* Smile face */}
-              <circle cx="16" cy="24" r="2" className="fill-accent" />
-              <circle cx="32" cy="24" r="2" className="fill-accent" />
-              <path d="M18 30C18 30 20 34 24 34C28 34 30 30 30 30" className="stroke-accent" strokeWidth="2.5" strokeLinecap="round" />
-              {/* Graduation cap accent */}
-              <path d="M24 4L34 8L24 12L14 8L24 4Z" className="fill-accent" />
-              <path d="M34 8V14" className="stroke-accent" strokeWidth="1.5" strokeLinecap="round" />
+              {/* Gradient definitions */}
+              <defs>
+                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="hsl(173, 58%, 39%)" />
+                  <stop offset="100%" stopColor="hsl(173, 58%, 30%)" />
+                </linearGradient>
+                <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="hsl(16, 85%, 57%)" />
+                  <stop offset="100%" stopColor="hsl(16, 85%, 47%)" />
+                </linearGradient>
+              </defs>
+              {/* Modern rounded square base */}
+              <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#logoGradient)" />
+              {/* Stylized L letter */}
+              <path 
+                d="M14 12V32H30" 
+                stroke="white" 
+                strokeWidth="4" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                opacity="0.95"
+              />
+              {/* Smile arc */}
+              <path 
+                d="M20 26C20 26 24 32 32 32" 
+                stroke="url(#accentGradient)" 
+                strokeWidth="3.5" 
+                strokeLinecap="round"
+              />
+              {/* Subtle sparkle */}
+              <circle cx="36" cy="12" r="3" fill="white" opacity="0.6" />
             </svg>
             <div className="flex flex-col">
-              <span className="font-heading font-bold text-lg md:text-xl text-foreground leading-tight">
+              <span className="font-heading font-bold text-lg md:text-xl text-foreground leading-tight tracking-tight">
                 <span className="hidden sm:inline">LEARN WITH SMILE</span>
                 <span className="sm:hidden">LWS</span>
               </span>
-              <span className="hidden sm:block text-xs text-muted-foreground font-medium">English & Career Excellence</span>
+              <span className="hidden sm:block text-[11px] text-muted-foreground font-medium tracking-wide uppercase">English & Career Excellence</span>
             </div>
           </Link>
 

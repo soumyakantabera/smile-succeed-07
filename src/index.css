@@ -150,6 +150,23 @@
     @apply max-w-7xl mx-auto;
   }
   
+  /* Glassmorphism */
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/40 shadow-xl;
+  }
+  
+  .glass-header {
+    @apply bg-background/70 backdrop-blur-2xl border-b border-border/30;
+  }
+  
+  .glass-button {
+    @apply bg-background/30 backdrop-blur-md border border-border/30 hover:bg-background/50;
+  }
+  
+  .glass-surface {
+    @apply bg-card/50 backdrop-blur-lg border border-border/20;
+  }
+  
   /* Gradient text */
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;

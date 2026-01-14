@@ -6,6 +6,7 @@ export const BUSINESS_INFO = {
   tagline: "Master English. Accelerate Your Career.",
   phone: "+91 8981672404",
   phoneClean: "918981672404",
+  whatsapp: "918981672404",
   email: "learnwithsmile@proton.me",
   address: {
     full: "75/2/4, Raja Ram Mohan Roy Road, Kolkata — 700008",
