@@ -21,11 +21,34 @@ const Header = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center gap-2 font-heading font-bold text-xl md:text-2xl text-primary hover:text-primary/90 transition-colors"
+            className="flex items-center gap-2 hover:opacity-90 transition-opacity"
           >
-            <span className="text-2xl md:text-3xl">😊</span>
-            <span className="hidden sm:inline">LEARN WITH SMILE</span>
-            <span className="sm:hidden">LWS</span>
+            <svg 
+              className="w-10 h-10 md:w-12 md:h-12" 
+              viewBox="0 0 48 48" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              {/* Book/Learning shape */}
+              <rect x="4" y="8" width="40" height="32" rx="4" className="fill-primary" />
+              <path d="M24 12V36" className="stroke-primary-foreground" strokeWidth="2" strokeLinecap="round" />
+              <path d="M8 12C8 12 16 14 24 14C32 14 40 12 40 12" className="stroke-primary-foreground" strokeWidth="2" strokeLinecap="round" />
+              {/* Smile face */}
+              <circle cx="16" cy="24" r="2" className="fill-accent" />
+              <circle cx="32" cy="24" r="2" className="fill-accent" />
+              <path d="M18 30C18 30 20 34 24 34C28 34 30 30 30 30" className="stroke-accent" strokeWidth="2.5" strokeLinecap="round" />
+              {/* Graduation cap accent */}
+              <path d="M24 4L34 8L24 12L14 8L24 4Z" className="fill-accent" />
+              <path d="M34 8V14" className="stroke-accent" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+            <div className="flex flex-col">
+              <span className="font-heading font-bold text-lg md:text-xl text-foreground leading-tight">
+                <span className="hidden sm:inline">LEARN WITH SMILE</span>
+                <span className="sm:hidden">LWS</span>
+              </span>
+              <span className="hidden sm:block text-xs text-muted-foreground font-medium">English & Career Excellence</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
