@@ -11,6 +11,11 @@ import Pricing from "./pages/Pricing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Behala from "./pages/locations/Behala";
+import Ballygunge from "./pages/locations/Ballygunge";
+import Tollygunge from "./pages/locations/Tollygunge";
+import RashbehariAvenue from "./pages/locations/RashbehariAvenue";
+import Gariahat from "./pages/locations/Gariahat";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +33,12 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          {/* Location Pages */}
+          <Route path="/spoken-english-behala" element={<Behala />} />
+          <Route path="/spoken-english-ballygunge" element={<Ballygunge />} />
+          <Route path="/spoken-english-tollygunge" element={<Tollygunge />} />
+          <Route path="/spoken-english-rashbehari-avenue" element={<RashbehariAvenue />} />
+          <Route path="/spoken-english-gariahat" element={<Gariahat />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
