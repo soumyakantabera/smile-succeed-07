@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import { AnimatedSection } from "@/hooks/useScrollAnimation";
 
 const testimonials = [
   {
@@ -26,7 +27,7 @@ const Testimonials = () => {
     <section className="section-padding bg-secondary">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <AnimatedSection animation="fade-up" className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
             What Our Students Say
           </h2>
@@ -36,40 +37,43 @@ const Testimonials = () => {
           <p className="text-xs text-muted-foreground mt-2">
             (These are representative examples)
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* Testimonial Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
+            <AnimatedSection 
               key={index}
-              className="bg-card rounded-2xl p-6 md:p-8 border border-border relative"
+              animation="fade-up"
+              delay={index * 150}
             >
-              {/* Quote Icon */}
-              <Quote className="w-8 h-8 text-primary/20 absolute top-6 right-6" />
-              
-              {/* Content */}
-              <p className="text-foreground mb-6 leading-relaxed relative z-10">
-                "{testimonial.content}"
-              </p>
-              
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-primary font-semibold">
-                    {testimonial.initials}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-medium text-foreground">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.role}
-                  </p>
+              <div className="bg-card rounded-2xl p-6 md:p-8 border border-border relative h-full">
+                {/* Quote Icon */}
+                <Quote className="w-8 h-8 text-primary/20 absolute top-6 right-6" />
+                
+                {/* Content */}
+                <p className="text-foreground mb-6 leading-relaxed relative z-10">
+                  "{testimonial.content}"
+                </p>
+                
+                {/* Author */}
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <span className="text-primary font-semibold">
+                      {testimonial.initials}
+                    </span>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.role}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           ))}
         </div>
       </div>

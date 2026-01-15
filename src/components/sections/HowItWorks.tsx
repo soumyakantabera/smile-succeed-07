@@ -1,4 +1,5 @@
 import { MessageSquare, Target, Repeat, Trophy } from "lucide-react";
+import { AnimatedSection } from "@/hooks/useScrollAnimation";
 
 interface HowItWorksProps {
   variant?: "english" | "career" | "general";
@@ -80,21 +81,26 @@ const HowItWorks = ({ variant = "general" }: HowItWorksProps) => {
     <section className="section-padding bg-secondary">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <AnimatedSection animation="fade-up" className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
             How It Works
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             A simple, proven process to help you achieve your goals.
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {currentSteps.map((step, index) => {
             const IconComponent = step.icon;
             return (
-              <div key={index} className="relative">
+              <AnimatedSection 
+                key={index} 
+                animation="scale"
+                delay={index * 120}
+                className="relative"
+              >
                 {/* Connector Line (hidden on mobile and last item) */}
                 {index < currentSteps.length - 1 && (
                   <div className="hidden lg:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-0.5 bg-border" />
@@ -119,7 +125,7 @@ const HowItWorks = ({ variant = "general" }: HowItWorksProps) => {
                     {step.description}
                   </p>
                 </div>
-              </div>
+              </AnimatedSection>
             );
           })}
         </div>
