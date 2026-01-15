@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen, Briefcase, GraduationCap, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AnimatedSection } from "@/hooks/useScrollAnimation";
 
 const programs = [
   {
@@ -38,55 +39,60 @@ const ProgramCards = () => {
     <section className="section-padding bg-background">
       <div className="container-custom">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <AnimatedSection animation="fade-up" className="text-center mb-12">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
             Choose Your Path
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Whether you need English fluency or career guidance, we have a program designed for your goals.
           </p>
-        </div>
+        </AnimatedSection>
 
         {/* Program Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {programs.map((program, index) => {
             const IconComponent = program.icon;
             return (
-              <Link
+              <AnimatedSection 
                 key={index}
-                to={program.link}
-                className="group bg-card rounded-2xl p-6 md:p-8 border border-border hover:border-primary/50 transition-all duration-300 card-hover"
+                animation="fade-up" 
+                delay={index * 100}
               >
-                <div className={`w-14 h-14 ${program.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                  <IconComponent className="w-7 h-7" />
-                </div>
-                
-                <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {program.title}
-                </h3>
-                
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {program.description}
-                </p>
-                
-                <div className="flex items-center text-primary font-medium group-hover:gap-3 gap-2 transition-all">
-                  Learn more
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
+                <Link
+                  to={program.link}
+                  className="group bg-card rounded-2xl p-6 md:p-8 border border-border hover:border-primary/50 transition-all duration-300 card-hover block h-full"
+                >
+                  <div className={`w-14 h-14 ${program.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                    <IconComponent className="w-7 h-7" />
+                  </div>
+                  
+                  <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {program.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {program.description}
+                  </p>
+                  
+                  <div className="flex items-center text-primary font-medium group-hover:gap-3 gap-2 transition-all">
+                    Learn more
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              </AnimatedSection>
             );
           })}
         </div>
 
         {/* View Pricing CTA */}
-        <div className="text-center mt-12">
+        <AnimatedSection animation="fade-up" delay={400} className="text-center mt-12">
           <Link to="/pricing">
             <Button size="lg" variant="outline" className="gap-2">
               View Pricing Plans
               <ArrowRight className="w-5 h-5" />
             </Button>
           </Link>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );

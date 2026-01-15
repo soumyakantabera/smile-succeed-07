@@ -71,36 +71,36 @@ const Header = () => {
                   fill="url(#logoGradientMain)"
                 />
                 
-                {/* Open book / speech bubble hybrid */}
+                {/* Open book */}
                 <g filter="url(#softShadow)">
                   {/* Left page */}
                   <path 
-                    d="M12 18C12 16 14 14 18 14C22 14 24 16 24 18V32C24 32 22 30 18 30C14 30 12 32 12 32V18Z" 
+                    d="M10 17C10 15 12 13 17 13C22 13 24 15 24 17V33C24 33 22 31 17 31C12 31 10 33 10 33V17Z" 
                     fill="url(#pageGradient)"
                   />
                   {/* Right page */}
                   <path 
-                    d="M36 18C36 16 34 14 30 14C26 14 24 16 24 18V32C24 32 26 30 30 30C34 30 36 32 36 32V18Z" 
+                    d="M38 17C38 15 36 13 31 13C26 13 24 15 24 17V33C24 33 26 31 31 31C36 31 38 33 38 33V17Z" 
                     fill="url(#pageGradient)"
                   />
                 </g>
                 
-                {/* Smile curve on the book */}
+                {/* Happy eyes - centered on book pages */}
+                <circle cx="17" cy="20" r="2" fill="hsl(173, 58%, 35%)" />
+                <circle cx="31" cy="20" r="2" fill="hsl(173, 58%, 35%)" />
+                
+                {/* Smile curve - properly centered */}
                 <path 
-                  d="M16 24C18 28 24 30 32 26" 
+                  d="M17 26C19 29 24 30 31 27" 
                   stroke="url(#smileGradient)" 
                   strokeWidth="2.5" 
                   strokeLinecap="round"
                   fill="none"
                 />
                 
-                {/* Happy eyes */}
-                <circle cx="18" cy="20" r="1.5" fill="hsl(173, 58%, 35%)" />
-                <circle cx="30" cy="20" r="1.5" fill="hsl(173, 58%, 35%)" />
-                
                 {/* Sparkle accent */}
                 <g opacity="0.9">
-                  <path d="M38 10L39 12L41 11L39 13L40 15L38 13L36 14L38 12L37 10L38 10Z" fill="hsl(45, 100%, 60%)" />
+                  <path d="M40 8L41 10L43 9L41 11L42 13L40 11L38 12L40 10L39 8L40 8Z" fill="hsl(45, 100%, 60%)" />
                 </g>
               </svg>
             </div>

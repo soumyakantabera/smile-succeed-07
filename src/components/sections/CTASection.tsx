@@ -1,6 +1,7 @@
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BUSINESS_INFO, WHATSAPP_URL } from "@/lib/constants";
+import { AnimatedSection } from "@/hooks/useScrollAnimation";
 
 interface CTASectionProps {
   title?: string;
@@ -20,7 +21,7 @@ const CTASection = ({
   return (
     <section className={`section-padding ${bgClass}`}>
       <div className="container-custom">
-        <div className="max-w-3xl mx-auto text-center">
+        <AnimatedSection animation="scale" className="max-w-3xl mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-background mb-4">
             {title}
           </h2>
@@ -60,7 +61,7 @@ const CTASection = ({
           <p className="text-background/60 text-sm mt-6">
             ✨ First session is absolutely free. No credit card required.
           </p>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
