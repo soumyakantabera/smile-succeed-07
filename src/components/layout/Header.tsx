@@ -40,55 +40,68 @@ const Header = () => {
           >
             <div className="relative">
               <svg 
-                className="w-9 h-9 md:w-10 md:h-10 transition-transform group-hover:scale-105" 
-                viewBox="0 0 40 40" 
+                className="w-10 h-10 md:w-11 md:h-11 transition-transform group-hover:scale-105 group-hover:rotate-3" 
+                viewBox="0 0 48 48" 
                 fill="none" 
                 xmlns="http://www.w3.org/2000/svg"
                 aria-hidden="true"
               >
                 <defs>
                   <linearGradient id="logoGradientMain" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="hsl(173, 58%, 45%)" />
+                    <stop offset="0%" stopColor="hsl(173, 58%, 48%)" />
                     <stop offset="50%" stopColor="hsl(173, 58%, 39%)" />
-                    <stop offset="100%" stopColor="hsl(173, 58%, 32%)" />
+                    <stop offset="100%" stopColor="hsl(173, 50%, 28%)" />
                   </linearGradient>
                   <linearGradient id="smileGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="hsl(16, 85%, 55%)" />
-                    <stop offset="100%" stopColor="hsl(16, 85%, 50%)" />
+                    <stop offset="0%" stopColor="hsl(16, 90%, 58%)" />
+                    <stop offset="100%" stopColor="hsl(24, 95%, 53%)" />
                   </linearGradient>
-                  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
-                    <feMerge>
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
+                  <linearGradient id="pageGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stopColor="white" stopOpacity="0.85" />
+                    <stop offset="100%" stopColor="white" stopOpacity="1" />
+                  </linearGradient>
+                  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="1" stdDeviation="1" floodOpacity="0.15"/>
                   </filter>
                 </defs>
                 
-                {/* Modern rounded square with subtle gradient */}
-                <rect x="0" y="0" width="40" height="40" rx="10" fill="url(#logoGradientMain)" />
-                
-                {/* Stylized L with elegant stroke */}
+                {/* Organic blob shape background */}
                 <path 
-                  d="M12 10V28H26" 
-                  stroke="white" 
-                  strokeWidth="3.5" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                  filter="url(#glow)"
+                  d="M24 4C32 4 40 8 42 16C44 24 42 34 36 40C30 46 18 46 12 40C6 34 4 24 6 16C8 8 16 4 24 4Z" 
+                  fill="url(#logoGradientMain)"
                 />
                 
-                {/* Elegant smile curve */}
+                {/* Open book / speech bubble hybrid */}
+                <g filter="url(#softShadow)">
+                  {/* Left page */}
+                  <path 
+                    d="M12 18C12 16 14 14 18 14C22 14 24 16 24 18V32C24 32 22 30 18 30C14 30 12 32 12 32V18Z" 
+                    fill="url(#pageGradient)"
+                  />
+                  {/* Right page */}
+                  <path 
+                    d="M36 18C36 16 34 14 30 14C26 14 24 16 24 18V32C24 32 26 30 30 30C34 30 36 32 36 32V18Z" 
+                    fill="url(#pageGradient)"
+                  />
+                </g>
+                
+                {/* Smile curve on the book */}
                 <path 
-                  d="M16 22C18 27 26 28 30 24" 
+                  d="M16 24C18 28 24 30 32 26" 
                   stroke="url(#smileGradient)" 
                   strokeWidth="2.5" 
                   strokeLinecap="round"
                   fill="none"
                 />
                 
-                {/* Subtle accent dot */}
-                <circle cx="32" cy="10" r="2.5" fill="white" opacity="0.7" />
+                {/* Happy eyes */}
+                <circle cx="18" cy="20" r="1.5" fill="hsl(173, 58%, 35%)" />
+                <circle cx="30" cy="20" r="1.5" fill="hsl(173, 58%, 35%)" />
+                
+                {/* Sparkle accent */}
+                <g opacity="0.9">
+                  <path d="M38 10L39 12L41 11L39 13L40 15L38 13L36 14L38 12L37 10L38 10Z" fill="hsl(45, 100%, 60%)" />
+                </g>
               </svg>
             </div>
             
