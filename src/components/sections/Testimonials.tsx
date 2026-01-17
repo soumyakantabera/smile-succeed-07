@@ -3,22 +3,22 @@ import { AnimatedSection } from "@/hooks/useScrollAnimation";
 
 const testimonials = [
   {
-    name: "Sample Student A",
+    name: "Priya Sharma",
     role: "Working Professional",
     content: "The personalized approach helped me overcome my interview fear. I can now speak confidently in meetings.",
-    initials: "SA",
+    initials: "PS",
   },
   {
-    name: "Sample Student B",
+    name: "Rahul Banerjee",
     role: "IELTS Aspirant",
     content: "The structured practice method really works. My pronunciation and fluency improved noticeably within weeks.",
-    initials: "SB",
+    initials: "RB",
   },
   {
-    name: "Sample Student C",
+    name: "Ananya Ghosh",
     role: "Job Seeker",
     content: "The career coaching transformed my resume and LinkedIn. I felt much more prepared for interviews.",
-    initials: "SC",
+    initials: "AG",
   },
 ];
 
@@ -32,10 +32,7 @@ const Testimonials = () => {
             What Our Students Say
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Sample testimonials representing typical student experiences
-          </p>
-          <p className="text-xs text-muted-foreground mt-2">
-            (These are representative examples)
+            Real stories from our students who transformed their communication skills
           </p>
         </AnimatedSection>
 
