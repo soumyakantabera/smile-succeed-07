@@ -33,86 +33,40 @@ const Header = () => {
       
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-18 px-4">
-          {/* Elegant Logo */}
-          <Link 
-            to="/" 
-            className="flex items-center gap-2.5 hover:opacity-90 transition-all group"
-          >
-            <div className="relative">
-              <svg 
-                className="w-10 h-10 md:w-11 md:h-11 transition-transform group-hover:scale-105 group-hover:rotate-3" 
-                viewBox="0 0 48 48" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <defs>
-                  <linearGradient id="logoGradientMain" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="hsl(173, 58%, 48%)" />
-                    <stop offset="50%" stopColor="hsl(173, 58%, 39%)" />
-                    <stop offset="100%" stopColor="hsl(173, 50%, 28%)" />
-                  </linearGradient>
-                  <linearGradient id="smileGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="hsl(16, 90%, 58%)" />
-                    <stop offset="100%" stopColor="hsl(24, 95%, 53%)" />
-                  </linearGradient>
-                  <linearGradient id="pageGradient" x1="0%" y1="100%" x2="0%" y2="0%">
-                    <stop offset="0%" stopColor="white" stopOpacity="0.85" />
-                    <stop offset="100%" stopColor="white" stopOpacity="1" />
-                  </linearGradient>
-                  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow dx="0" dy="1" stdDeviation="1" floodOpacity="0.15"/>
-                  </filter>
-                </defs>
-                
-                {/* Organic blob shape background */}
-                <path 
-                  d="M24 4C32 4 40 8 42 16C44 24 42 34 36 40C30 46 18 46 12 40C6 34 4 24 6 16C8 8 16 4 24 4Z" 
-                  fill="url(#logoGradientMain)"
-                />
-                
-                {/* Open book */}
-                <g filter="url(#softShadow)">
-                  {/* Left page */}
-                  <path 
-                    d="M10 17C10 15 12 13 17 13C22 13 24 15 24 17V33C24 33 22 31 17 31C12 31 10 33 10 33V17Z" 
-                    fill="url(#pageGradient)"
-                  />
-                  {/* Right page */}
-                  <path 
-                    d="M38 17C38 15 36 13 31 13C26 13 24 15 24 17V33C24 33 26 31 31 31C36 31 38 33 38 33V17Z" 
-                    fill="url(#pageGradient)"
-                  />
-                </g>
-                
-                {/* Happy eyes - centered on book pages */}
-                <circle cx="17" cy="20" r="2" fill="hsl(173, 58%, 35%)" />
-                <circle cx="31" cy="20" r="2" fill="hsl(173, 58%, 35%)" />
-                
-                {/* Smile curve - properly centered */}
-                <path 
-                  d="M17 26C19 29 24 30 31 27" 
-                  stroke="url(#smileGradient)" 
-                  strokeWidth="2.5" 
-                  strokeLinecap="round"
-                  fill="none"
-                />
-                
-                {/* Sparkle accent */}
-                <g opacity="0.9">
-                  <path d="M40 8L41 10L43 9L41 11L42 13L40 11L38 12L40 10L39 8L40 8Z" fill="hsl(45, 100%, 60%)" />
-                </g>
-              </svg>
-            </div>
-            
-            <div className="flex flex-col leading-none">
-              <span className="font-heading font-bold text-base md:text-lg text-foreground tracking-tight">
-                <span className="hidden xs:inline">LEARN WITH SMILE</span>
-                <span className="xs:hidden">LWS</span>
-              </span>
-              <span className="hidden md:block text-[10px] text-muted-foreground font-medium tracking-wider uppercase mt-0.5">
-                English & Career Excellence
-              </span>
+          {/* Modern LWS Logo */}
+          <Link to="/" className="flex items-center gap-3 group">
+            <svg 
+              className="w-12 h-12 transition-all duration-300 group-hover:scale-105" 
+              viewBox="0 0 56 56" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="headerLogoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="hsl(173, 58%, 45%)" />
+                  <stop offset="100%" stopColor="hsl(173, 58%, 35%)" />
+                </linearGradient>
+                <linearGradient id="headerAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="hsl(16, 90%, 55%)" />
+                  <stop offset="100%" stopColor="hsl(35, 95%, 55%)" />
+                </linearGradient>
+              </defs>
+              {/* Modern rounded square background */}
+              <rect x="4" y="4" width="48" height="48" rx="14" fill="url(#headerLogoBg)" />
+              {/* LWS Text */}
+              <text x="28" y="33" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="800" fill="white" letterSpacing="-0.5">
+                LWS
+              </text>
+              {/* Smile curve under text */}
+              <path d="M16 38 Q28 46 40 38" stroke="url(#headerAccent)" strokeWidth="3" strokeLinecap="round" fill="none" />
+              {/* Sparkle accents */}
+              <circle cx="46" cy="10" r="3" fill="hsl(45, 100%, 65%)" opacity="0.9" />
+              <circle cx="10" cy="46" r="2" fill="hsl(45, 100%, 65%)" opacity="0.7" />
+            </svg>
+            <div className="flex flex-col">
+              <span className="font-heading font-bold text-base sm:text-lg tracking-tight leading-tight">Learn With Smile</span>
+              <span className="text-[10px] sm:text-xs text-muted-foreground font-medium tracking-wider uppercase">English Academy</span>
             </div>
           </Link>
 
