@@ -21,9 +21,9 @@ export const BUSINESS_INFO = {
     sat: "10:30 AM – 8:00 PM",
     sun: "12:00 PM – 8:00 PM",
   },
-  // Placeholder URLs - Replace with actual URLs
-  googleBusinessUrl: "GOOGLE_BUSINESS_PROFILE_URL",
-  googleReviewUrl: "GOOGLE_REVIEW_URL",
+  // Google Business URLs
+  googleBusinessUrl: "https://share.google/56Kr6MJkC6oF0Lyw1",
+  googleReviewUrl: "https://g.page/r/CY5ptQJYQVPVEBM/review",
   canonicalBase: "SITE_CANONICAL_BASE_URL",
   mapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7372.783206356567!2d88.327187!3d22.489486!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027b0735dcc47b%3A0xd553415802b5698e!2sLEARN%20WITH%20SMILE!5e0!3m2!1sen!2sit!4v1757682194625!5m2!1sen!2sit",
