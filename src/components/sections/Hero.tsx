@@ -2,39 +2,62 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { STATS, WHATSAPP_URL } from "@/lib/constants";
+import heroImage from "@/assets/hero-homepage.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-secondary via-background to-secondary">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
+    <section className="relative overflow-hidden min-h-[90vh] flex items-center">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroImage} 
+          alt="Students learning English in a modern Kolkata classroom" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/50" />
       </div>
       
       <div className="container-custom section-padding relative">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-2xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in">
+          <div 
+            className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-in"
+            style={{ animationDelay: '0.1s', animationFillMode: 'backwards' }}
+          >
             <span className="text-lg">🎓</span>
             <span>Kolkata-based offline + Online Pan-India</span>
           </div>
 
-          {/* Headline */}
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance animate-fade-in">
-            Master English.{" "}
-            <span className="gradient-text">Accelerate Your Career.</span>
+          {/* Animated Headline */}
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
+            <span 
+              className="inline-block animate-fade-in"
+              style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}
+            >
+              Master English.
+            </span>{" "}
+            <span 
+              className="inline-block gradient-text animate-fade-in"
+              style={{ animationDelay: '0.4s', animationFillMode: 'backwards' }}
+            >
+              Accelerate Your Career.
+            </span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in">
+          <p 
+            className="text-lg md:text-xl text-muted-foreground max-w-xl mb-8 animate-fade-in"
+            style={{ animationDelay: '0.6s', animationFillMode: 'backwards' }}
+          >
             Overcome interview fear, meeting nerves, and communication gaps. 
             Build confidence that transforms your professional life.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in">
+          <div 
+            className="flex flex-col sm:flex-row gap-4 mb-10 animate-fade-in"
+            style={{ animationDelay: '0.8s', animationFillMode: 'backwards' }}
+          >
             <Link to="/english-learning">
               <Button size="lg" className="cta-primary w-full sm:w-auto text-base gap-2">
                 Explore English Learning
@@ -42,7 +65,7 @@ const Hero = () => {
               </Button>
             </Link>
             <Link to="/career-counselling">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-base gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-base gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground backdrop-blur-sm">
                 Explore Career Counselling
                 <ArrowRight className="w-5 h-5" />
               </Button>
@@ -50,7 +73,10 @@ const Hero = () => {
           </div>
 
           {/* Trust Stats */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-lg mx-auto animate-fade-in">
+          <div 
+            className="grid grid-cols-3 gap-4 md:gap-6 max-w-md bg-background/80 backdrop-blur-sm rounded-xl p-4 border border-border animate-fade-in"
+            style={{ animationDelay: '1s', animationFillMode: 'backwards' }}
+          >
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-primary font-heading">
                 {STATS.recommend}
@@ -78,7 +104,10 @@ const Hero = () => {
           </div>
 
           {/* Free Session CTA */}
-          <div className="mt-10 animate-fade-in">
+          <div 
+            className="mt-8 animate-fade-in"
+            style={{ animationDelay: '1.2s', animationFillMode: 'backwards' }}
+          >
             <a
               href={`${WHATSAPP_URL}&text=${encodeURIComponent("Hi! I'm interested in a free first session. Please share more details.")}`}
               target="_blank"
