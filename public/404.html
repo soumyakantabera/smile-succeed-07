@@ -3,16 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <script>
-    // Single Page App redirect for GitHub Pages
-    // This handles client-side routing by redirecting to index.html
-    // Get the base path from the current location
-    const pathSegments = window.location.pathname.split('/');
-    const repoName = pathSegments[1]; // e.g., 'learnwithsmile'
-    const remainingPath = '/' + pathSegments.slice(2).join('/');
-    const search = window.location.search;
-    const hash = window.location.hash;
-    sessionStorage.setItem('redirect', remainingPath + search + hash);
-    window.location.replace('/' + repoName + '/');
+    // Single Page App redirect for custom domain
+    // Store the path for React Router to handle
+    const path = window.location.pathname + window.location.search + window.location.hash;
+    sessionStorage.setItem('redirect', path);
+    window.location.replace('/');
   </script>
 </head>
 <body>
