@@ -5,6 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Set base path for GitHub Pages - change 'learnwithsmile' to your repo name
+  base: process.env.BASE_URL || "/",
   server: {
     host: "::",
     port: 8080,
