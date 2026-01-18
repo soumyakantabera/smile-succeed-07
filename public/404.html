@@ -5,11 +5,14 @@
   <script>
     // Single Page App redirect for GitHub Pages
     // This handles client-side routing by redirecting to index.html
-    const path = window.location.pathname;
+    // Get the base path from the current location
+    const pathSegments = window.location.pathname.split('/');
+    const repoName = pathSegments[1]; // e.g., 'learnwithsmile'
+    const remainingPath = '/' + pathSegments.slice(2).join('/');
     const search = window.location.search;
     const hash = window.location.hash;
-    sessionStorage.setItem('redirect', path + search + hash);
-    window.location.replace('/learnwithsmile/');
+    sessionStorage.setItem('redirect', remainingPath + search + hash);
+    window.location.replace('/' + repoName + '/');
   </script>
 </head>
 <body>
