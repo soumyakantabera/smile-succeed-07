@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://YOUR-USERNAME.github.io/learnwithsmile/sitemap.xml
+Sitemap: https://soumyakantabera.github.io/smile-succeed-07/sitemap.xml
