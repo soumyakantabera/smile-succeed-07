@@ -19,31 +19,39 @@ import Gariahat from "./pages/locations/Gariahat";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/english-learning" element={<EnglishLearning />} />
-          <Route path="/career-counselling" element={<CareerCounselling />} />
-          <Route path="/ielts-business" element={<IeltsBusiness />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* Location Pages */}
-          <Route path="/spoken-english-behala" element={<Behala />} />
-          <Route path="/spoken-english-ballygunge" element={<Ballygunge />} />
-          <Route path="/spoken-english-tollygunge" element={<Tollygunge />} />
-          <Route path="/spoken-english-rashbehari-avenue" element={<RashbehariAvenue />} />
-          <Route path="/spoken-english-gariahat" element={<Gariahat />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  // Vite exposes the deploy base at build time ("/" locally, "/smile-succeed-07/" on GitHub Pages)
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter basename={basename}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/english-learning" element={<EnglishLearning />} />
+            <Route path="/career-counselling" element={<CareerCounselling />} />
+            <Route path="/ielts-business" element={<IeltsBusiness />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            {/* Location Pages */}
+            <Route path="/spoken-english-behala" element={<Behala />} />
+            <Route path="/spoken-english-ballygunge" element={<Ballygunge />} />
+            <Route path="/spoken-english-tollygunge" element={<Tollygunge />} />
+            <Route
+              path="/spoken-english-rashbehari-avenue"
+              element={<RashbehariAvenue />}
+            />
+            <Route path="/spoken-english-gariahat" element={<Gariahat />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
