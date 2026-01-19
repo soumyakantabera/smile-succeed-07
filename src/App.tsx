@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SEOHead } from "@/components/SEOHead";
 import Index from "./pages/Index";
 import EnglishLearning from "./pages/EnglishLearning";
 import CareerCounselling from "./pages/CareerCounselling";
@@ -29,6 +30,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter basename={basename}>
+          <SEOHead />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/english-learning" element={<EnglishLearning />} />
