@@ -11,6 +11,7 @@ import IeltsBusiness from "./pages/IeltsBusiness";
 import Pricing from "./pages/Pricing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import BrandAssets from "./pages/BrandAssets";
 import NotFound from "./pages/NotFound";
 import Behala from "./pages/locations/Behala";
 import Ballygunge from "./pages/locations/Ballygunge";
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/brand-assets" element={<BrandAssets />} />
             {/* Location Pages */}
             <Route path="/spoken-english-behala" element={<Behala />} />
             <Route path="/spoken-english-ballygunge" element={<Ballygunge />} />
