@@ -112,11 +112,12 @@ const Hero = () => {
               href={`${WHATSAPP_URL}&text=${encodeURIComponent("Hi! I'm interested in a free first session. Please share more details.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-accent hover:text-accent/80 font-medium transition-colors"
             >
-              <span className="text-lg">✨</span>
-              <span className="underline">Book your FREE first session today</span>
-              <ArrowRight className="w-4 h-4" />
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground gap-2">
+                <span>✨</span>
+                Book your FREE first session today
+                <ArrowRight className="w-4 h-4" />
+              </Button>
             </a>
           </div>
         </div>
