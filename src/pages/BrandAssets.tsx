@@ -6,7 +6,7 @@ import { useState, useRef } from "react";
 import { LogoIcon, LogoFull, downloadSvg, downloadPng } from "@/components/brand/Logo";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import FestivalPosterMaker from "@/components/brand/FestivalPosterMaker";
 
 const BrandAssets = () => {
   const [copiedColor, setCopiedColor] = useState<string | null>(null);
@@ -411,6 +411,15 @@ const BrandAssets = () => {
                 </div>
               </div>
             </div>
+          </AnimatedSection>
+
+          {/* Festival Poster Maker */}
+          <AnimatedSection animation="fade-up" delay={175} className="mb-16">
+            <h2 className="font-heading text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+              <Sparkles className="w-6 h-6 text-accent" />
+              Advanced Poster & Marketing Kit
+            </h2>
+            <FestivalPosterMaker />
           </AnimatedSection>
 
           {/* Colors Section */}
