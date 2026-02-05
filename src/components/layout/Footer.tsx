@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, FileImage } from "lucide-react";
 import { BUSINESS_INFO, NAVIGATION } from "@/lib/constants";
+import { LogoIcon } from "@/components/brand/Logo";
 
 const LOCATION_PAGES = [
   { name: "Behala", path: "/spoken-english-behala" },
@@ -20,31 +21,7 @@ const Footer = () => {
           {/* Brand & Contact */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-4 group">
-              <svg 
-                className="w-11 h-11 transition-all duration-300 group-hover:scale-105" 
-                viewBox="0 0 56 56" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <defs>
-                  <linearGradient id="footerLogoBg" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="hsl(173, 58%, 45%)" />
-                    <stop offset="100%" stopColor="hsl(173, 58%, 35%)" />
-                  </linearGradient>
-                  <linearGradient id="footerAccent" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="hsl(16, 90%, 55%)" />
-                    <stop offset="100%" stopColor="hsl(35, 95%, 55%)" />
-                  </linearGradient>
-                </defs>
-                <rect x="4" y="4" width="48" height="48" rx="14" fill="url(#footerLogoBg)" />
-                <text x="28" y="33" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="18" fontWeight="800" fill="white" letterSpacing="-0.5">
-                  LWS
-                </text>
-                <path d="M16 38 Q28 46 40 38" stroke="url(#footerAccent)" strokeWidth="3" strokeLinecap="round" fill="none" />
-                <circle cx="46" cy="10" r="3" fill="hsl(45, 100%, 65%)" opacity="0.9" />
-                <circle cx="10" cy="46" r="2" fill="hsl(45, 100%, 65%)" opacity="0.7" />
-              </svg>
+              <LogoIcon size={44} id="footer-logo" className="transition-transform duration-300 group-hover:scale-105" />
               <div className="flex flex-col">
                 <span className="font-heading font-bold text-lg leading-tight">Learn With Smile</span>
                 <span className="text-[10px] text-background/60 font-medium tracking-wider uppercase">English Academy</span>
@@ -174,13 +151,23 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-10 pt-6 border-t border-background/15">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-background/60">
               © {currentYear} LEARN WITH SMILE. All rights reserved.
             </p>
-            <p className="text-sm text-background/60">
-              Kolkata, India | Online across Pan-India
-            </p>
+            <div className="flex items-center gap-4">
+              <Link 
+                to="/brand-assets" 
+                className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors"
+              >
+                <FileImage className="w-4 h-4" />
+                Brand Assets
+              </Link>
+              <span className="text-background/30">|</span>
+              <p className="text-sm text-background/60">
+                Kolkata, India | Online across Pan-India
+              </p>
+            </div>
           </div>
         </div>
       </div>
